@@ -3,7 +3,6 @@ package config
 import (
 	"errors"
 	"fmt"
-	"log"
 	"os"
 	"reflect"
 
@@ -47,7 +46,6 @@ func checkRequiredEnv(cfg *Config) error {
 				// Create an error with the message indicating the missing environment variable
 				return errors.New("missing environment variable: " + fieldType.Name)
 			}
-
 			// If the field is a nested structure with fields of its own
 			if field.NumField() > 0 {
 				// Loop through all the fields of the nested structure

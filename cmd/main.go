@@ -15,13 +15,13 @@ func main() {
 		fmt.Println("Error loading the configuration", err)
 		return
 	}
+
 	router := setupRouter()
 	_ = router.Run(":8080")
 }
 
 func setupRouter() *gin.Engine {
 	router := gin.Default()
-
 	router.GET("ping", func(c *gin.Context) {
 		cfg, err := config.GetConfig()
 		if err != nil {
@@ -30,6 +30,5 @@ func setupRouter() *gin.Engine {
 		}
 		c.JSON(http.StatusOK, cfg)
 	})
-
 	return router
 }

@@ -1,0 +1,6 @@
+# Extends the pre-commit-golong repository
+repos:
+  - repo: https://github.com/tekwizely/pre-commit-golang
+    rev: v1.0.0-rc.1 # change this to the latest version when released
+    hooks:
+      - id: golangci-lint
